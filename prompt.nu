@@ -1,4 +1,4 @@
-// TODO: fix parser errors from undeclared variables
+# TODO: fix parser errors from undeclared variables
 
 use goodies.nu *
 
@@ -77,7 +77,7 @@ def git-status [git_repo] {
 }
 
 export def prompt-command [] {
-    let git_repo = nushell-git-json | from json;
+    let git_repo = git-status-json | from json;
     [
         (last-exit-code)
         (git-status $git_repo)
