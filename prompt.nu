@@ -2,7 +2,7 @@
 
 use goodies.nu *
 
-const path_separator = $"(ansi purple)/";
+const path_separator = $"(ansi blue)/";
 
 def path-separator-decorate [] {
     str join $path_separator | str append $path_separator
