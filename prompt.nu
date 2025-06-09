@@ -76,7 +76,7 @@ def git-status [git_repo] {
     }
 }
 
-export def prompt-command [] {
+def prompt-command [] {
     let git_repo = git-status-json | from json;
     [
         (last-exit-code)
@@ -87,3 +87,5 @@ export def prompt-command [] {
     | str join "\n"
     | str append "\n"
 }
+
+$env.PROMPT_COMMAND = {prompt-command};

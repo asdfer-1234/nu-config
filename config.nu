@@ -47,7 +47,7 @@ $env.config.table.header_on_separator = true
 $env.config.filesize.unit = 'binary'
 $env.config.cursor_shape.emacs = "line"        
 
-use prompt.nu prompt-command
+source prompt.nu
 
 $env.last = null
 
@@ -78,6 +78,7 @@ def --wrapped disown [...command: string] {
     sh -c '"$@" </dev/null >/dev/null 2>/dev/null & disown' $command.0 ...$command
 }
 
-$env.PROMPT_COMMAND = {prompt-command};
+
 $env.PROMPT_INDICATOR = "$ ";
 $env.PROMPT_COMMAND_RIGHT = "";
+$env.LS_COLORS = "di=1;34:ln=1;36:ex=0;32:*.7z=3;34:*.ace=3;34:*.alz=3;34:*.apk=3;34:*.arc=3;34:*.arj=3;34:*.bz=3;34:*.bz2=3;34:*.cab=3;34:*.cpio=3;34:*.crate=3;34:*.deb=3;34:*.drpm=3;34:*.dwm=3;34:*.dz=3;34:*.ear=3;34:*.egg=3;34:*.esd=3;34:*.gz=3;34:*.jar=3;34:*.lha=3;34:*.lrz=3;34:*.lz=3;34:*.lz4=3;34:*.lzh=3;34:*.lzma=3;34:*.lzo=3;34:*.pyz=3;34:*.rar=3;34:*.rpm=3;34:*.rz=3;34:*.sar=3;34:*.swm=3;34:*.t7z=3;34:*.tar=3;34:*.taz=3;34:*.tbz=3;34:*.tbz2=3;34:*.tgz=3;34:*.tlz=3;34:*.txz=3;34:*.tz=3;34:*.tzo=3;34:*.tzst=3;34:*.udeb=3;34:*.war=3;34:*.whl=3;34:*.wim=3;34:*.xz=3;34:*.z=3;34:*.zip=3;34:*.zoo=3;34:*.zst=3;34"
