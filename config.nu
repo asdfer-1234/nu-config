@@ -147,3 +147,23 @@ $env.PROMPT_COMMAND_RIGHT = "";
 $env.LS_COLORS = "di=0;34:ln=0;35:ex=0;32:*.7z=3;34:*.ace=3;34:*.alz=3;34:*.apk=3;34:*.arc=3;34:*.arj=3;34:*.bz=3;34:*.bz2=3;34:*.cab=3;34:*.cpio=3;34:*.crate=3;34:*.deb=3;34:*.drpm=3;34:*.dwm=3;34:*.dz=3;34:*.ear=3;34:*.egg=3;34:*.esd=3;34:*.gz=3;34:*.jar=3;34:*.lha=3;34:*.lrz=3;34:*.lz=3;34:*.lz4=3;34:*.lzh=3;34:*.lzma=3;34:*.lzo=3;34:*.pyz=3;34:*.rar=3;34:*.rpm=3;34:*.rz=3;34:*.sar=3;34:*.swm=3;34:*.t7z=3;34:*.tar=3;34:*.taz=3;34:*.tbz=3;34:*.tbz2=3;34:*.tgz=3;34:*.tlz=3;34:*.txz=3;34:*.tz=3;34:*.tzo=3;34:*.tzst=3;34:*.udeb=3;34:*.war=3;34:*.whl=3;34:*.wim=3;34:*.xz=3;34:*.z=3;34:*.zip=3;34:*.zoo=3;34:*.zst=3;34"
 
 use completions/completions.nu *
+
+alias g = git
+alias `g a` = git add
+alias `g m` = git commit
+alias `g p` = git push
+alias `g l` = git pull
+alias `g f` = git fetch
+alias `g c` = git checkout
+alias `g s` = git status
+alias `g b` = git branch
+alias `git a` = git add
+alias `git m` = git commit
+alias `git p` = git push
+alias `git l` = git pull
+alias `git f` = git fetch
+alias `git c` = git checkout
+alias `git s` = git status
+alias `git b` = git branch
+
+alias c = cargo
