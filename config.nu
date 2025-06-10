@@ -6,29 +6,29 @@ $env.config.buffer_editor = "/usr/bin/code"
 $env.config.show_banner = false
 
 if $nu.is-interactive {
-    blear
+	blear
 }
 
 
 
 let git_prompt = [
-    [variable, closure];
-    [files_added, {$"(ansi green)+($in)"}]
-    [files_deleted, {$"(ansi red)-($in)"}]
-    [files_modified, {$"(ansi blue)M($in)"}]
-    [files_renamed, {$"(ansi blue)R($in)"}]
-    [files_copied, {$"(ansi green)Copied ($in)"}]
-    [files_ignored, {$"(ansi red)Ignored ($in)"}]
-    [files_untracked, {$"(ansi white)Untracked ($in)"}]
-    [files_typechange, {$"(ansi white)Typechange ($in)"}]
-    [files_unreadable, {$"(ansi white)Unreadable ($in)"}]
-    [files_conflicted, {$"(ansi white)Conflicted ($in)"}]
-    [files_unmodified, {$"(ansi white)Unmodified ($in)"}]
+	[variable, closure];
+	[files_added, {$"(ansi green)+($in)"}]
+	[files_deleted, {$"(ansi red)-($in)"}]
+	[files_modified, {$"(ansi blue)M($in)"}]
+	[files_renamed, {$"(ansi blue)R($in)"}]
+	[files_copied, {$"(ansi green)Copied ($in)"}]
+	[files_ignored, {$"(ansi red)Ignored ($in)"}]
+	[files_untracked, {$"(ansi white)Untracked ($in)"}]
+	[files_typechange, {$"(ansi white)Typechange ($in)"}]
+	[files_unreadable, {$"(ansi white)Unreadable ($in)"}]
+	[files_conflicted, {$"(ansi white)Conflicted ($in)"}]
+	[files_unmodified, {$"(ansi white)Unmodified ($in)"}]
 ]
 
 let path_abbreviations = [
-    [path, abbreviated];
-    [/home/asdfer, $"(ansi purple)~"]
+	[path, abbreviated];
+	[/home/asdfer, $"(ansi purple)~"]
 ];
 
 
@@ -45,37 +45,37 @@ $env.config.table.padding.right = 5
 $env.config.table.header_on_separator = true
 
 $env.config.filesize.unit = 'binary'
-$env.config.cursor_shape.emacs = "line"        
+$env.config.cursor_shape.emacs = "line"		
 
 source prompt.nu
 
 $env.last = null
 
 $env.config.hooks.display_output = {
-    if (term size).columns >= 100 {
-        table -e
-    } else {
-        table
-    } | print
-    $env.last = $in # nushell mutable caputure when so i don't have to use $env!
-    cd -P .
+	if (term size).columns >= 100 {
+		table -e
+	} else {
+		table
+	} | print
+	$env.last = $in # nushell mutable caputure when so i don't have to use $env!
+	cd -P .
 }
 
 def ch [] {
-    $env.last
+	$env.last
 }
 
 # Copied and added --wrapped from
 # https://github.com/nushell/nushell/discussions/9584#discussioncomment-6370296
 def --wrapped sudo [...command: string] {
-    print $command
-    ^sudo nu --stdin --commands ($command | str join ' ')
+	print $command
+	^sudo nu --stdin --commands ($command | str join ' ')
 }
 
 # Copied and added --wrapped from
 # https://github.com/nushell/nushell/issues/247#issuecomment-2209629106
 def --wrapped disown [...command: string] {
-    sh -c '"$@" </dev/null >/dev/null 2>/dev/null & disown' $command.0 ...$command
+	sh -c '"$@" </dev/null >/dev/null 2>/dev/null & disown' $command.0 ...$command
 }
 
 $env.config.color_config = {
@@ -102,17 +102,17 @@ $env.config.color_config = {
 	glob: red_bold,
 	separator: dark_gray,
 	block: white,
-    
-    # shapes
-    shape_keyword: red_bold,
+	
+	# shapes
+	shape_keyword: red_bold,
 	shape_closure: green_bold,
-    shape_matching_brackets: { attr: underline },
+	shape_matching_brackets: { attr: underline },
 	shape_filepath: blue,
 	shape_directory: blue,
 	shape_signature: green_bold,
-    shape_redirection: purple_bold,
-    shape_vardecl: purple,
-    shape_list: cyan_bold,
+	shape_redirection: purple_bold,
+	shape_vardecl: purple,
+	shape_list: cyan_bold,
 	shape_externalarg: white,
 	shape_table: blue_bold,
 	shape_pipe: purple_bold,
@@ -120,9 +120,9 @@ $env.config.color_config = {
 	shape_block: blue_bold,
 	shape_bool: white_italic,
 	shape_int: white_italic,
-    shape_float: white_italic,
+	shape_float: white_italic,
 	shape_binary: white_italic,
-    shape_globpattern: white_italic,
+	shape_globpattern: white_italic,
 	shape_glob_interpolation: white_italic,
 	shape_string: white,
 	shape_custom: white_bold,
